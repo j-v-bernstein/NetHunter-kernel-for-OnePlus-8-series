@@ -1,17 +1,20 @@
+
 NetHunter kernel for OnePlus 8 / T / Pro OOS 11
 
 Supported features:
 
-WiFi injection patches added
+- WiFi injection patches added
 
-Internal WiFi monitor mode
+- Internal WiFi monitor mode
 
-Bluetooth (RFCOMM)
+- Bluetooth (RFCOMM)
 
-Fully working USB Arsenal
+- Fully working USB Arsenal
 
-External WiFi adapters from NetHunter's support list
+- External WiFi adapters from NetHunter's support list
 
-HID attacks (rubber ducky etc) supported
+- HID attacks (rubber ducky etc) supported
 
-Varius USB adapters supported. RTLSDR (HackRF/AirSpy), WIFI, ETHERNET, BLUETOOTH, SERIAL, CAN
+- Varius USB adapters supported. RTLSDR (HackRF/AirSpy), WIFI, ETHERNET, BLUETOOTH, SERIAL, CAN
+
+
