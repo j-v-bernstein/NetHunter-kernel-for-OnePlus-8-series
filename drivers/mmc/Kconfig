@@ -1,0 +1,32 @@
+#
+# MMC subsystem configuration
+#
+
+menuconfig MMC
+	tristate "MMC/SD/SDIO card support"
+	depends on HAS_IOMEM
+	help
+	  This selects MultiMediaCard, Secure Digital and Secure
+	  Digital I/O support.
+
+	  If you want MMC/SD/SDIO support, you should say Y here and
+	  also to your specific host controller driver.
+
+if MMC
+
+source "drivers/mmc/core/Kconfig"
+
+source "drivers/mmc/host/Kconfig"
+
+endif # MMC
+
+if !MMC
+
+config BOGUS_MMC
+	bool "Bogus MMC sysfs"
+	help
+	  This module exposes a bogus sysfs entry:
+	  /sys/class/mmc_host/mmc0/clk_scaling/enable,
+	  in order for perfd to operate properly.
+
+endif # !MMC
