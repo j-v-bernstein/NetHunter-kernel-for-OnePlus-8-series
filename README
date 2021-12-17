@@ -46,24 +46,28 @@ $ git clone -b master --single-branch https://github.com/j-v-bernstein/NetHunter
 3.Download Build Toolchain
 --------------------------
 
-0. Clone this toolchain repo in tools folder
+0. Clone those toolchains in tools folder
 
-$ git clone --depth=1 https://github.com/pkm774/android-kernel-tools tools
+$ git clone -b lineage-18.1 --single-branch https://github.com/j-v-bernstein/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9.git arm
+
+$ git clone -b lx-12.0 --single-branch https://github.com/j-v-bernstein/prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git aarch64
+
+$ git clone -b master --single-branch https://github.com/j-v-bernstein/android_prebuilts_clang_host_linux-x86_clang-r437112.git clang
 
 1. Install required packages, for Debian distros :
 
-$ sudo apt-get update && sudo apt-get upgrade -y
-$ sudo apt-get install gcc-aarch64-linux-gnu -y
+$ sudo apt update && sudo apt upgrade -yy
+$ sudo apt install gcc-aarch64-linux-gnu -y
 
 -> Now compile using AOSP clang
 
 2. Set path for the toolchains.
 
 
-$	PATH="tools/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin:$PATH"
-$	PATH="tools/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin:$PATH"
-$	PATH="tools/clang/host/linux-x86/clang-r428724/bin:$PATH"
-$	export LD_LIBRARY_PATH="tools/clang/host/linux-x86/clang-r428724/lib64:$LD_LIBRARY_PATH"
+$	PATH="tools/aarch64/aarch64-linux-android-4.9/bin:$PATH"
+$	PATH="tools/arm/arm-linux-androideabi-4.9/bin:$PATH"
+$	PATH="tools/clang/clang-r428724/bin:$PATH"
+$	export LD_LIBRARY_PATH="tools/clang/clang-r437112/lib64:$LD_LIBRARY_PATH"
 ```
 3. Export required flags
 
